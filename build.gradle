@@ -1,0 +1,42 @@
+apply plugin: 'scala'
+apply plugin: 'idea'
+
+version = '0.1'
+
+repositories {
+
+    // For local development with pelam-scala-csv
+    mavenLocal()
+
+    mavenCentral()
+
+}
+
+dependencies {
+    //compile project(':scala-macros')
+    //testCompile project(':scala-macros')
+
+    compile 'org.scala-lang:scala-library:2.11.7'
+    compile 'org.scala-lang:scala-reflect:2.11.7'
+
+    compile 'ch.qos.logback:logback-classic:1.1.2'
+    compile 'org.clapper:grizzled-slf4j_2.11:1.0.2'
+
+    // For Java like enums with small amount of
+    // boilerplate https://github.com/lloydmeta/enumeratum
+    compile 'com.beachape:enumeratum_2.11:1.2.1'
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.scalatest:scalatest_2.11:2.2.2'
+    testCompile 'org.mockito:mockito-all:1.10.8'
+    testCompile 'com.typesafe.akka:akka-testkit_2.11:2.3.7'
+
+    compile 'com.typesafe.akka:akka-actor_2.11:2.3.7'
+
+}
+
+idea {
+    module {
+        excludeDirs += file(".idea")
+    }
+}
