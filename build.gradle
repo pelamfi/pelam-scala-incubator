@@ -3,6 +3,8 @@ apply plugin: 'idea'
 
 version = '0.1'
 
+group = 'fi.pelam.scalaincubator'
+
 repositories {
 
     // For local development with pelam-scala-csv
