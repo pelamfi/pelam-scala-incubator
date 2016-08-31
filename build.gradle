@@ -21,8 +21,8 @@ repositories {
 }
 
 dependencies {
-    compile project(':pelam-scala-incubator:scala-macros')
-    testCompile project(':pelam-scala-incubator:scala-macros')
+    compile project(':pelam-scala-incubator:pelam-scala-incubator-macros')
+    testCompile project(':pelam-scala-incubator:pelam-scala-incubator-macros')
 
     compile 'org.scala-lang:scala-library:2.11.7'
     compile 'org.scala-lang:scala-reflect:2.11.7'
