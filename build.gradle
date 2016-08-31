@@ -1,15 +1,21 @@
 apply plugin: 'scala'
 apply plugin: 'idea'
+apply plugin: 'maven'
 
+if (Boolean.valueOf(signArtifacts)) {
+    println "Artifact signing is on."
+    apply plugin: 'signing'
+}
+
+group = 'fi.pelam'
 version = '0.1'
-
-group = 'fi.pelam.scalaincubator'
+description = """
+Pelam's open source utility code incubator and collection.
+"""
 
 repositories {
 
-    // For local development with pelam-scala-csv
     mavenLocal()
-
     mavenCentral()
 
 }
@@ -41,6 +47,78 @@ dependencies {
     compile 'com.googlecode.java-diff-utils:diffutils:1.3.0'
     compile 'com.google.guava:guava:16.0'
 
+}
+
+if (Boolean.valueOf(signArtifacts)) {
+    signing {
+        sign configurations.archives
+    }
+}
+
+// http://stackoverflow.com/a/11475089/1148030
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task scaladocJar(type: Jar, dependsOn: scaladoc) {
+    // ScalaDoc is kept in -javadoc jars http://www.scala-lang.org/old/node/12471.html
+    classifier = 'javadoc'
+    from scaladoc.destinationDir
+}
+
+artifacts {
+    archives sourcesJar
+    archives scaladocJar
+}
+
+uploadArchives {
+    dependsOn(scaladocJar)
+    dependsOn(sourcesJar)
+    repositories {
+        mavenDeployer {
+            pom.project {
+                name "Pelam's Scala Utility Incubator Library"
+                description = project.description
+                url "https://github.com/pelamfi/pelam-scala-incubator/blob/master/readme.md"
+                inceptionYear 2016
+                scm {
+                    connection "scm:git:https://github.com/pelamfi/pelam-scala-incubator.git"
+                    url "https://github.com/pelamfi/pelam-scala-incubator"
+                }
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                        distribution 'repo'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'pelam'
+                        name = 'Peter Lamberg'
+                    }
+                }
+            }
+            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2") {
+                authentication(userName: "pelam", password: sonatypePassword)
+            }
+            if (Boolean.valueOf(signArtifacts)) {
+                beforeDeployment {
+                    MavenDeployment deployment -> signing.signPom(deployment)
+                }
+            }
+        }
+    }
+}
+
+tasks.withType(ScalaDoc) {
+    title = "Pelam's Scala Util Incubator library"
+
+    scalaDocOptions.additionalParameters = [
+            // TODO: convert readme.md to html and feed to scaladoc here? "-doc-root-content", "readme.???",
+            "-sourcepath", "${projectDir}/src/main/scala",
+            "-doc-source-url", "https://github.com/pelamfi/pelam-scala-incubator/blob/master/src/main/scala€{FILE_PATH}.scala"]
 }
 
 idea {

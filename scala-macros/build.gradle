@@ -1,9 +1,20 @@
 apply plugin: 'scala'
 apply plugin: 'idea'
+apply plugin: 'maven'
 
-version = '1.0'
+if (Boolean.valueOf(signArtifacts)) {
+    println "Artifact signing is on."
+    apply plugin: 'signing'
+}
+
+group = 'fi.pelam'
+version = '0.1'
+description = """
+Pelam's open source utility code incubator and collection.
+"""
 
 repositories {
+    mavenLocal()
     mavenCentral()
 }
 
