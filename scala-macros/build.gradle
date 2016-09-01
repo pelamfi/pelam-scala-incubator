@@ -3,7 +3,7 @@ apply plugin: 'idea'
 apply plugin: 'maven'
 
 if (Boolean.valueOf(signArtifacts)) {
-    println "Artifact signing is on."
+    println "Artifact signing is on. (scala-macros)"
     apply plugin: 'signing'
 }
 
@@ -11,6 +11,10 @@ group = 'fi.pelam'
 version = '0.1'
 description = """
 Pelam's open source utility code incubator and collection.
+Separate project for Scala macros. Macros, at least with Gradle,
+don't like to be in same source tree as the code using them.
+This way I keep open the possibility for utilities that use
+a macro as a component.
 """
 
 repositories {
