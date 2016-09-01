@@ -2,23 +2,28 @@
 
 Pelam's open source utility code collection.
 
-The idea is that I will collect all kinds of useful bits of code here without worrying
-about things like dependencies.
+I will collect all kinds of useful bits of code here without worrying
+about their dependencies.
 
-Just let me know and I will break out any smaller piece of this project and publish 
-it separately!
-
-If something in here turns out to be generally useful for somebody else, 
-it is only right and just to be able to use it witout cruft and additional useless dependencies.
+If anyone finds anything here useful or interesting, let me know!
+I promise to clean up the dependencies of that part and publish it separately.
 
 ## Current Dependencies
 
-  * Akka -- Concurrency framework used among other things to provide UI reponsiveness
-  * JavaFX -- UI framework
+  * [Akka](http://akka.io/docs/) -- Erlang like Actor model implementation for Scala and Java
+    * Used in Akka + JavaFX binding binding utilities
+    * Also some utilities built on top of Akka
+  * [JavaFX](http://docs.oracle.com/javase/8/javase-clienttechnologies.htm) -- The new modern Java GUI toolkit
+    * Used in Akka + JavaFX binding binding utilities 
+  * [Guava](https://github.com/google/guava) -- Guava the Google Common code library (for [CacheBuilder](https://google.github.io/guava/releases/18.0/api/docs/com/google/common/cache/CacheBuilder.html))
+    * Used in enumeration to localization bundle mapping utility.
+  * [Enumeratum](https://github.com/lloydmeta/enumeratum) -- Nice Java like enums for Scala.
+    * Used in enumeration to localization bundle mapping utility.
+  * [Grizzled-SLF4J](http://software.clapper.org/grizzled-slf4j/) Grizzled-SLF4J, a Scala-friendly SLF4J Wrappe
 
 ## License
 
-Pelam's Scala CSV library is distributed under the 
+Pelam's Scala Incubator library is distributed under the 
 Apache 2.0 license which is available in the included file [LICENSE.txt](LICENSE.txt)
 and [online](http://www.apache.org/licenses/LICENSE-2.0).
 
