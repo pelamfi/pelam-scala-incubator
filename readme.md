@@ -1,4 +1,4 @@
-# Project Pelam Scala Incubator
+# Pelam Scala Incubator
 
 Pelam's open source utility code collection.
 
@@ -7,6 +7,24 @@ about their dependencies.
 
 If anyone finds anything here useful or interesting, let me know!
 I promise to clean up the dependencies of that part and publish it separately.
+
+## Listing of different utilities
+
+  * OffensiveFSM -- Standard Akka FSM is defensive, but during development you want a loud signals when the unexpected happens.
+  * JavaFXActor -- A marriage between JavaFX and Akka; Using the actor model in UI development is suprisingly handy.
+  * Throttle -- Wrap your function in a limiter that executes only after a quiet period.
+  * JavaFXNodeDb -- Track nodes in a JavaFX hierarchy and get notified when nodes of interest are added
+  * JavaFXImplicits -- Implicit conversions for working with various JavaFX callbacks
+  * Rectangle2DUtil -- Some utils for working with JavaFX rectangle objects
+  * TransformUtil -- Some utils for working with JavaFX transforms and bounds
+  * DiffUtil -- Simple wrappers for java-diff-utils library
+  * EitherUtil -- Some operations on Scala Either type: `partitionEihers` and `pullUpEithers`
+  * EnumLocalizationMapFactory -- Quickly get a map from Enumeratum enum into localized strings loaded from a resource bundle.
+  * FormatterUtil -- Convert Java non thread safe formaters into a nice thread safe Scala functions.
+  * Memoize -- A simple memoizing functor based on an idea from Stakoverflow
+  * RingBuffer -- A fast polling based buffer for communicating between threads. Ideas from LMAX Disruptor.
+  * plus some other tiny utility functions waiting to grow and improve
+  
 
 ## Current Dependencies
 
@@ -20,6 +38,12 @@ I promise to clean up the dependencies of that part and publish it separately.
   * [Enumeratum](https://github.com/lloydmeta/enumeratum) -- Nice Java like enums for Scala.
     * Used in enumeration to localization bundle mapping utility.
   * [Grizzled-SLF4J](http://software.clapper.org/grizzled-slf4j/) Grizzled-SLF4J, a Scala-friendly SLF4J Wrappe
+  * Difflib
+  
+## TODO
+
+  * Complete code examples for each of the utilities
+  * At least one test for each util
 
 ## License
 
