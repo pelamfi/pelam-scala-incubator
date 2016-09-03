@@ -8,37 +8,6 @@ about their dependencies.
 If anyone finds anything here useful or interesting, let me know!
 I promise to clean up the dependencies of that part and publish it separately.
 
-## Maven coordinates
-
-### Gradle
-
-```groovy
-compile 'fi.pelam:pelam-scala-incubator:0.1'
-compile 'fi.pelam:pelam-scala-incubator-macros:0.1'
-```
-
-### SBT
-
-```scala
-libraryDependencies += "fi.pelam" % "pelam-scala-incubator" % "0.1"
-libraryDependencies += "fi.pelam" % "pelam-scala-incubator-macros" % "0.1"
-```
-
-### Maven
-
-```xml
-<dependency>
-    <groupId>fi.pelam</groupId>
-    <artifactId>pelam-scala-incubator</artifactId>
-    <version>0.1</version>
-</dependency>
-<dependency>
-    <groupId>fi.pelam</groupId>
-    <artifactId>pelam-scala-incubator-macros</artifactId>
-    <version>0.1</version>
-</dependency>
-```
-
 ## Listing of different utilities
 
   * OffensiveFSM -- Standard Akka FSM is defensive, but during development you want a loud signals when the unexpected happens.
@@ -55,7 +24,36 @@ libraryDependencies += "fi.pelam" % "pelam-scala-incubator-macros" % "0.1"
   * Memoize -- A simple memoizing functor based on an idea from Stakoverflow
   * RingBuffer -- A fast polling based buffer for communicating between threads. Ideas from LMAX Disruptor.
   * plus some other tiny utility functions waiting to grow and improve
-  
+
+## License
+
+Pelam's Scala Incubator library is distributed under the 
+Apache 2.0 license which is available in the included file [LICENSE.txt](LICENSE.txt)
+and [online](http://www.apache.org/licenses/LICENSE-2.0).
+
+## Maven coordinates
+
+### Gradle
+
+```groovy
+compile 'fi.pelam:pelam-scala-incubator:0.1'
+```
+
+### SBT
+
+```scala
+libraryDependencies += "fi.pelam" % "pelam-scala-incubator" % "0.1"
+```
+
+### Maven
+
+```xml
+<dependency>
+    <groupId>fi.pelam</groupId>
+    <artifactId>pelam-scala-incubator</artifactId>
+    <version>0.1</version>
+</dependency>
+```  
 
 ## Current Dependencies
 
@@ -75,12 +73,6 @@ libraryDependencies += "fi.pelam" % "pelam-scala-incubator-macros" % "0.1"
 
   * Complete code examples for each of the utilities
   * At least one test for each util
-
-## License
-
-Pelam's Scala Incubator library is distributed under the 
-Apache 2.0 license which is available in the included file [LICENSE.txt](LICENSE.txt)
-and [online](http://www.apache.org/licenses/LICENSE-2.0).
 
 ## History of this project
 
