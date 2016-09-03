@@ -33,6 +33,8 @@ and [online](http://www.apache.org/licenses/LICENSE-2.0).
 
 ## Maven coordinates
 
+  ** NOTE: Publishing to Maven Central is currently pending **
+
 ### Gradle
 
 ```groovy
