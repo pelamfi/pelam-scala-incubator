@@ -8,6 +8,37 @@ about their dependencies.
 If anyone finds anything here useful or interesting, let me know!
 I promise to clean up the dependencies of that part and publish it separately.
 
+## Maven coordinates
+
+### Gradle
+
+```groovy
+compile 'fi.pelam:pelam-scala-incubator:0.1'
+compile 'fi.pelam:pelam-scala-incubator-macros:0.1'
+```
+
+### SBT
+
+```scala
+libraryDependencies += "fi.pelam" % "pelam-scala-incubator" % "0.1"
+libraryDependencies += "fi.pelam" % "pelam-scala-incubator-macros" % "0.1"
+```
+
+### Maven
+
+```xml
+<dependency>
+    <groupId>fi.pelam</groupId>
+    <artifactId>pelam-scala-incubator</artifactId>
+    <version>0.1</version>
+</dependency>
+<dependency>
+    <groupId>fi.pelam</groupId>
+    <artifactId>pelam-scala-incubator-macros</artifactId>
+    <version>0.1</version>
+</dependency>
+```
+
 ## Listing of different utilities
 
   * OffensiveFSM -- Standard Akka FSM is defensive, but during development you want a loud signals when the unexpected happens.
