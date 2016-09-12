@@ -1,3 +1,0 @@
-rootProject.name = 'pelam-scala-incubator'
-include 'scala-macros'
-project(":scala-macros").name = 'pelam-scala-incubator-macros'
