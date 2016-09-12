@@ -110,7 +110,7 @@ tasks.withType(ScalaDoc) {
 
     scalaDocOptions.additionalParameters = [
             // TODO: convert readme.md to html and feed to scaladoc here? "-doc-root-content", "readme.???",
-            "-sourcepath", "${projectDir}/src/main/scala",
+            "-sourcepath", projectDir.toString() + "/src/main/scala",
             "-doc-source-url", "https://github.com/pelamfi/pelam-scala-incubator/blob/master/src/main/scala€{FILE_PATH}.scala"]
 }
 
