@@ -2,6 +2,7 @@
 .gradle
 **/*.iml
 temp-notes.txt
+out/
 
 # Exclude IntelliJ files, they will be recreated from Gradle files
 .idea
