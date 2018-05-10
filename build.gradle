@@ -8,7 +8,7 @@ if (Boolean.valueOf(signArtifacts)) {
 }
 
 group = 'fi.pelam'
-version = '0.1'
+version = '0.2'
 description = """
 Pelam's open source utility code incubator and collection.
 """
@@ -21,22 +21,22 @@ repositories {
 }
 
 dependencies {
-    compile 'org.scala-lang:scala-library:2.11.7'
-    compile 'org.scala-lang:scala-reflect:2.11.7'
+    compile 'org.scala-lang:scala-library:2.12.4'
+    compile 'org.scala-lang:scala-reflect:2.12.4'
 
     // For Java like enums with small amount of
     // boilerplate https://github.com/lloydmeta/enumeratum
-    compile 'com.beachape:enumeratum_2.11:1.2.1'
+    compile 'com.beachape:enumeratum_2.12:1.5.12'
 
-    compile 'com.typesafe.akka:akka-actor_2.11:2.3.7'
+    compile 'com.typesafe.akka:akka-actor_2.12:2.5.8'
 
     // http://stackoverflow.com/a/21219051/1148030
     compile 'com.google.code.findbugs:jsr305:3.0.0'
 
     compile 'com.googlecode.java-diff-utils:diffutils:1.3.0'
-    compile 'com.google.guava:guava:18.0'
+    compile 'com.google.guava:guava:23.0'
 
-    compile 'org.clapper:grizzled-slf4j_2.11:1.0.2'
+    compile 'org.clapper:grizzled-slf4j_2.12:1.3.2'
     testCompile 'ch.qos.logback:logback-classic:1.1.2'
 
     testCompile 'junit:junit:4.12'
@@ -94,7 +94,7 @@ uploadArchives {
                 }
             }
             repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2") {
-                authentication(userName: "pelam", password: sonatypePassword)
+                authentication(userName: sonatypeUser, password: sonatypePassword)
             }
             if (Boolean.valueOf(signArtifacts)) {
                 beforeDeployment {

@@ -38,13 +38,13 @@ and [online](http://www.apache.org/licenses/LICENSE-2.0).
 ### Gradle
 
 ```groovy
-compile 'fi.pelam:pelam-scala-incubator:0.1'
+compile 'fi.pelam:pelam-scala-incubator:0.2'
 ```
 
 ### SBT
 
 ```scala
-libraryDependencies += "fi.pelam" % "pelam-scala-incubator" % "0.1"
+libraryDependencies += "fi.pelam" % "pelam-scala-incubator" % "0.2"
 ```
 
 ### Maven
@@ -53,11 +53,14 @@ libraryDependencies += "fi.pelam" % "pelam-scala-incubator" % "0.1"
 <dependency>
     <groupId>fi.pelam</groupId>
     <artifactId>pelam-scala-incubator</artifactId>
-    <version>0.1</version>
+    <version>0.2</version>
 </dependency>
 ```  
 
 ## Current Dependencies
+The list of dependencies is pretty random due to this being
+an "incubator" for possible separate libraries in the future.
+Let me know if you need something.
 
   * [Akka](http://akka.io/docs/) -- Erlang like Actor model implementation for Scala and Java
     * Used in Akka + JavaFX binding binding utilities
@@ -71,8 +74,15 @@ libraryDependencies += "fi.pelam" % "pelam-scala-incubator" % "0.1"
   * [Grizzled-SLF4J](http://software.clapper.org/grizzled-slf4j/) Grizzled-SLF4J, a Scala-friendly SLF4J Wrappe
   * Difflib
   
+## Building
+
+Currently tested to build with Gradle 4.7.
+Works with Java 1.8
+
 ## TODO
 
+  * Artifacts for scala 2.11 and 2.12 (possibly with SBT)
+  * Test with Java 9 and 10
   * Complete code examples for each of the utilities
   * At least one test for each util
 

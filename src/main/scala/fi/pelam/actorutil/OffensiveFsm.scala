@@ -32,7 +32,7 @@ trait OffensiveFsm[S, D] extends FSM[S, D] with Logging {
 
     if (OffensiveFsm.offensiveMode) {
       // Shutdown the whole system on first error
-      context.system.shutdown()
+      context.system.terminate()
     }
 
     stay

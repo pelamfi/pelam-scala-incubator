@@ -7,7 +7,7 @@ import javafx.stage.{Screen, Window}
 
 import fi.pelam.util.FormatterUtil._
 
-import scala.collection.JavaConversions._
+import scala.collection.JavaConverters._
 
 object Rectangle2DUtil {
 
@@ -89,7 +89,8 @@ object Rectangle2DUtil {
   }
 
   def clampPointInsideAScreenWithMargin(window: Rectangle2D): Rectangle2D = {
-    val clippeds: List[Option[Rectangle2D]] = for (screen: Screen <- Screen.getScreens.toList) yield {
+    val clippeds: List[Option[Rectangle2D]] =
+      for (screen: Screen <- Screen.getScreens.asScala.toList) yield {
       if (screen.getBounds.intersects(window)) {
         val bounds: Rectangle2D = screen.getVisualBounds
         Some(moveTopLeftCornerInsideWithMargin(window, bounds))
