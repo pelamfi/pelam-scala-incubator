@@ -3,8 +3,13 @@
 **/*.iml
 temp-notes.txt
 out/
-project/
-target/
+
+# sbt
+lib_managed
+project/boot
+project/target
+target
+logs
 
 # Exclude IntelliJ files, they will be recreated from Gradle files
 .idea

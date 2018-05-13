@@ -1,9 +1,12 @@
-// Basic facts
+// Build setup imitated from https://github.com/FasterXML/jackson-module-scala
+
 name := "pelam-scala-incubator"
 
 organization := "fi.pelam"
 
 scalaVersion := "2.12.4"
+
+version := "0.2"
 
 crossScalaVersions := Seq("2.11.11", "2.12.4")
 
@@ -18,11 +21,10 @@ scalacOptions ++= (
   if (scalaVersion.value.startsWith("2.12")) {
     Seq.empty
   } else {
-    // Explicitly target 1.6 for scala < 2.12
+    // Explicitly target 1.8 for scala < 2.12
     Seq("-target:jvm-1.8")
   }
 )
-
 
 libraryDependencies ++= Seq(
   "org.scala-lang" % "scala-reflect" % scalaVersion.value,
@@ -49,6 +51,60 @@ printTests := {
   }
 }
 
-/*
-git.remoteRepo := "git@github.com:pelamfi/pelam-scala-incubator.git"
-*/
+// ------------ RELEASE
+
+// publishing
+publishMavenStyle := true
+
+releaseCrossBuild := true
+
+credentials += Credentials(Path.userHome / ".ivy2" / ".credentials_sonatype")
+
+publishTo := {
+  val nexus = "https://oss.sonatype.org/"
+  if (version.value.trim.endsWith("SNAPSHOT"))
+    Some("snapshots" at nexus + "content/repositories/snapshots")
+  else
+    Some("releases" at nexus + "service/local/staging/deploy/maven2")
+}
+
+publishArtifact in Test := false
+
+pomIncludeRepository := { _ => false }
+
+pomExtra := {
+  <url>https://github.com/pelamfi/pelam-scala-incubator</url>
+    <name>Pelam's Scala Utility Incubator Library</name>
+    <description>
+      Pelam's open source utility code incubator and collection.
+    </description>
+    <licenses>
+      <license>
+        <name>The Apache Software License, Version 2.0</name>
+        <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        <distribution>repo</distribution>
+      </license>
+    </licenses>
+    <scm>
+      <connection>scm:git:git@github.com:pelamfi/pelam-scala-incubator.git</connection>
+      <developerConnection>scm:git:git@github.com:pelamfi/pelam-scala-incubator.git</developerConnection>
+      <url>https://github.com/pelamfi/pelam-scala-incubator/blob/master/readme.md</url>
+    </scm>
+    <developers>
+      <developer>
+        <id>pelamfi</id>
+        <name>Peter Lamberg</name>
+        <email>pgithub@pelam.fi</email>
+      </developer>
+    </developers>
+    <contributors>
+    </contributors>
+}
+
+// use maven style tag name
+releaseTagName := s"${name.value}-${(version in ThisBuild).value}"
+
+// sign artifacts
+
+releasePublishArtifactsAction := PgpKeys.publishSigned.value
+
