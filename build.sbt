@@ -108,3 +108,7 @@ releaseTagName := s"${name.value}-${(version in ThisBuild).value}"
 
 releasePublishArtifactsAction := PgpKeys.publishSigned.value
 
+// https://www.scala-sbt.org/sbt-pgp/usage.html
+useGpg := true
+
+// More settings in ~/.sbt/1.0/global.sbt ~/.sbt/gpg.sbt
