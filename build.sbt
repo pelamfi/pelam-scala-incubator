@@ -110,5 +110,6 @@ releasePublishArtifactsAction := PgpKeys.publishSigned.value
 
 // https://www.scala-sbt.org/sbt-pgp/usage.html
 useGpg := true
+pgpSecretRing := pgpPublicRing.value
 
 // More settings in ~/.sbt/1.0/global.sbt ~/.sbt/gpg.sbt
