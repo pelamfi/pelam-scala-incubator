@@ -74,7 +74,6 @@ pomIncludeRepository := { _ => false }
 
 pomExtra := {
   <url>https://github.com/pelamfi/pelam-scala-incubator</url>
-    <name>Pelam's Scala Utility Incubator Library</name>
     <description>
       Pelam's open source utility code incubator and collection.
     </description>
