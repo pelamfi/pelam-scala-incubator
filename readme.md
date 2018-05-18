@@ -33,18 +33,20 @@ and [online](http://www.apache.org/licenses/LICENSE-2.0).
 
 ## Maven coordinates
 
-  ** NOTE: Publishing to Maven Central is currently pending **
+[The Maven Central Repository entry is here.](http://search.maven.org/#artifactdetails%7Cfi.pelam%7Cpelam-scala-incubator%7C0.2%7Cjar)
+
+The artifact is available as Scala 2.11 and Scala 2.12 versions.
 
 ### Gradle
 
 ```groovy
-compile 'fi.pelam:pelam-scala-incubator:0.2'
+compile 'fi.pelam:pelam-scala-incubator_2.12:0.2'
 ```
 
 ### SBT
 
 ```scala
-libraryDependencies += "fi.pelam" % "pelam-scala-incubator" % "0.2"
+libraryDependencies += "fi.pelam" %% "pelam-scala-incubator" % "0.2"
 ```
 
 ### Maven
@@ -52,7 +54,7 @@ libraryDependencies += "fi.pelam" % "pelam-scala-incubator" % "0.2"
 ```xml
 <dependency>
     <groupId>fi.pelam</groupId>
-    <artifactId>pelam-scala-incubator</artifactId>
+    <artifactId>pelam-scala-incubator_2.12</artifactId>
     <version>0.2</version>
 </dependency>
 ```  
@@ -76,8 +78,8 @@ Let me know if you need something.
   
 ## Building
 
-Currently tested to build with Gradle 4.7.
-Works with Java 1.8
+Currently tested to build with Gradle 4.7 and SBT
+Works with Java 1.8.
 
 ## TODO
 
