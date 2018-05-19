@@ -2,6 +2,8 @@
 
 name := "pelam-scala-incubator"
 
+description := "Pelam's open source utility code incubator and collection"
+
 organization := "fi.pelam"
 
 scalaVersion := "2.12.4"
@@ -74,9 +76,6 @@ pomIncludeRepository := { _ => false }
 
 pomExtra := {
   <url>https://github.com/pelamfi/pelam-scala-incubator</url>
-    <description>
-      Pelam's open source utility code incubator and collection.
-    </description>
     <licenses>
       <license>
         <name>The Apache Software License, Version 2.0</name>
