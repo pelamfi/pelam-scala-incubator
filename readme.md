@@ -1,5 +1,7 @@
 # Pelam Scala Incubator
 
+[![Build Status](https://travis-ci.org/pelamfi/pelam-scala-incubator.svg?branch=master)](https://travis-ci.org/pelamfi/pelam-scala-incubator)
+
 Pelam's open source utility code collection.
 
 I will collect all kinds of useful bits of code here without worrying
