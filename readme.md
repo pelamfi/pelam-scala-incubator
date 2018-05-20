@@ -78,8 +78,7 @@ Let me know if you need something.
   
 ## Building
 
-Currently tested to build with Gradle 4.7 and SBT
-Works with Java 1.8.
+Currently tested to build with Gradle 4.7 and SBT 1.1.4 and Java 1.8.
 
 ## TODO
 
