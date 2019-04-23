@@ -1,3 +1,8 @@
+plugins {
+    // As documented in https://openjfx.io/openjfx-docs/#gradle
+    id 'org.openjfx.javafxplugin' version '0.0.7'
+}
+
 apply plugin: 'scala'
 apply plugin: 'idea'
 apply plugin: 'maven'
@@ -7,8 +12,13 @@ if (Boolean.valueOf(signArtifacts)) {
     apply plugin: 'signing'
 }
 
+javafx {
+    version = "12"
+    modules = [ 'javafx.controls' ]
+}
+
 group = 'fi.pelam'
-version = '0.2'
+version = '0.3'
 description = """
 Pelam's open source utility code incubator and collection.
 """
@@ -21,23 +31,25 @@ repositories {
 }
 
 dependencies {
-    compile 'org.scala-lang:scala-library:2.12.4'
-    compile 'org.scala-lang:scala-reflect:2.12.4'
+    compile 'org.openjfx:javafx:12'
+
+    compile 'org.scala-lang:scala-library:2.12.8'
+    compile 'org.scala-lang:scala-reflect:2.12.8'
 
     // For Java like enums with small amount of
     // boilerplate https://github.com/lloydmeta/enumeratum
-    compile 'com.beachape:enumeratum_2.12:1.5.12'
+    compile 'com.beachape:enumeratum_2.12:1.5.13'
 
-    compile 'com.typesafe.akka:akka-actor_2.12:2.5.8'
+    compile 'com.typesafe.akka:akka-actor_2.12:2.5.22'
 
     // http://stackoverflow.com/a/21219051/1148030
     compile 'com.google.code.findbugs:jsr305:3.0.0'
 
     compile 'com.googlecode.java-diff-utils:diffutils:1.3.0'
-    compile 'com.google.guava:guava:23.0'
+    compile 'com.google.guava:guava:27.1-jre'
 
-    compile 'org.clapper:grizzled-slf4j_2.12:1.3.2'
-    testCompile 'ch.qos.logback:logback-classic:1.1.2'
+    compile 'org.clapper:grizzled-slf4j_2.12:1.3.3'
+    testCompile 'ch.qos.logback:logback-classic:1.2.3'
 
     testCompile 'junit:junit:4.12'
 }

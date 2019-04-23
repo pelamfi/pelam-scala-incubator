@@ -80,12 +80,11 @@ Let me know if you need something.
   
 ## Building
 
-Currently tested to build with Gradle 4.7 and SBT 1.1.4 and Java 1.8.
+Currently tested to build with Gradle 5.4 and SBT 1.1.4 and Open JDK 12.
 
 ## TODO
 
   * Artifacts for scala 2.11 and 2.12 (possibly with SBT)
-  * Test with Java 9 and 10
   * Complete code examples for each of the utilities
   * At least one test for each util
 
@@ -96,3 +95,8 @@ I broke these bits of code off from Ahma as I felt that some of them could
 become generally useful open source Scala libraries. As a note about the Git history,
 I just copied the bits of code over from the Ahma project. I did not bother to clean
 up and bring over the Git history from Ahma.
+
+## JavaFX and Java 12 notes
+
+  * SDK needed as a library in IntelliJ https://openjfx.io/openjfx-docs/
+  * JavaFX gradle plugin needed
