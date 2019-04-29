@@ -3,9 +3,9 @@ env:
   global:
   - ARTIFACTS_TARGET_PATHS="latest"
 jdk:
-  - oraclejdk8
+  - openjdk12
 scala:
-  - 2.12.5
+  - 2.12.8
 script:
   - gradle clean check scaladoc
 addons:
