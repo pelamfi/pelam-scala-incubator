@@ -1,11 +1,10 @@
 plugins {
     // As documented in https://openjfx.io/openjfx-docs/#gradle
     id 'org.openjfx.javafxplugin' version '0.0.7'
+    id 'maven'
+    id 'scala'
+    id 'idea'
 }
-
-apply plugin: 'scala'
-apply plugin: 'idea'
-apply plugin: 'maven'
 
 if (Boolean.valueOf(signArtifacts)) {
     println "Artifact signing is on."
