@@ -7,7 +7,7 @@ jdk:
 scala:
   - 2.12.8
 script:
-  - gradle clean check scaladoc
+  - ./gradlew clean check scaladoc
 addons:
   artifacts:
     paths:
