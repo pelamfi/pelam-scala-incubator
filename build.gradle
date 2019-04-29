@@ -17,7 +17,7 @@ javafx {
 }
 
 group = 'fi.pelam'
-version = '0.3'
+version = '0.3-SNAPSHOT'
 description = """
 Pelam's open source utility code incubator and collection.
 """
