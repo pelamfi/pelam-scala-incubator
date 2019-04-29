@@ -42,13 +42,13 @@ The artifact is available as Scala 2.11 and Scala 2.12 versions.
 ### Gradle
 
 ```groovy
-compile 'fi.pelam:pelam-scala-incubator_2.12:0.2'
+compile 'fi.pelam:pelam-scala-incubator_2.12:0.3'
 ```
 
 ### SBT
 
 ```scala
-libraryDependencies += "fi.pelam" %% "pelam-scala-incubator" % "0.2"
+libraryDependencies += "fi.pelam" %% "pelam-scala-incubator" % "0.3"
 ```
 
 ### Maven
@@ -57,7 +57,7 @@ libraryDependencies += "fi.pelam" %% "pelam-scala-incubator" % "0.2"
 <dependency>
     <groupId>fi.pelam</groupId>
     <artifactId>pelam-scala-incubator_2.12</artifactId>
-    <version>0.2</version>
+    <version>0.3</version>
 </dependency>
 ```  
 
@@ -80,11 +80,11 @@ Let me know if you need something.
   
 ## Building
 
-Currently tested to build with Gradle 5.4 and SBT 1.1.4 and Open JDK 12.
+Currently tested to build with Gradle 5.4.1 and SBT 1.2.8 and Open JDK 12.
 
 ## TODO
 
-  * Artifacts for scala 2.11 and 2.12 (possibly with SBT)
+  * The tests don't currently work with SBT due to the JavaFX dependency
   * Complete code examples for each of the utilities
   * At least one test for each util
 
