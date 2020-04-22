@@ -6,9 +6,9 @@ description := "Pelam's open source utility code incubator and collection"
 
 organization := "fi.pelam"
 
-scalaVersion := "2.12.8"
+scalaVersion := "2.13.1"
 
-crossScalaVersions := Seq("2.11.12", "2.12.8")
+crossScalaVersions := Seq("2.12.11", "2.13.1")
 
 scalacOptions ++= Seq()
 
@@ -29,14 +29,14 @@ scalacOptions ++= (
 libraryDependencies ++= Seq(
   "org.scala-lang" % "scala-reflect" % scalaVersion.value,
   "org.openjfx" % "javafx" % "12",
-  "com.beachape" %% "enumeratum" % "1.5.13",
-  "com.typesafe.akka" %% "akka-actor" % "2.5.22",
+  "com.beachape" %% "enumeratum" % "1.5.15",
+  "com.typesafe.akka" %% "akka-actor" % "2.6.4",
   "com.google.code.findbugs" % "jsr305" % "3.0.0",
   "com.googlecode.java-diff-utils" % "diffutils" % "1.3.0",
-  "com.google.guava" % "guava" % "27.1-jre",
-  "org.clapper" %% "grizzled-slf4j" % "1.3.3",
+  "com.google.guava" % "guava" % "29.0-jre",
+  "org.clapper" %% "grizzled-slf4j" % "1.3.4",
   "ch.qos.logback" % "logback-classic" % "1.2.3" % Test,
-  "org.scalatest" %% "scalatest" % "3.0.0" % Test,
+  "org.scalatest" %% "scalatest" % "3.1.1" % Test,
   "junit" % "junit" % "4.12" % Test,
   // https://stackoverflow.com/a/28051194/1148030
   "com.novocode" % "junit-interface" % "0.11" % Test exclude("junit", "junit-dep")
